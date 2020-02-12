@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.3现代模式，"use strict"</title>
+</head>
+
+<body>
+    <h1>Javascript严格模式（use strict）</h1>
+</body>
+
+</html>
+<script>
+    (function () {
+        "use strict";
+
+        // 1.不允许使用为声明的变量
+
+        // x = 3.14; //x is not defined 
+
+        // y = {
+        //     p1: 10,
+        //     p2: 20
+        // }
+
+        // y is not defined 对象也是一个变量
+
+        // 2.不允许删除变量或者对象
+        //  var z = 3.1415;
+        //  delete z; //Uncaught SyntaxError: Delete of an unqualified identifier in strict mode.
+
+
+        // 3.不允许使用八进制
+        // var a = 010; Uncaught SyntaxError: Octal literals are not allowed in strict mode.
+
+    })();
+
+</script>
