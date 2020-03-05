@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立即执行函数</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 立即执行函数
+    function foo() {// 这是定义，Declaration；定义只是让解释器知道其存在，但是不会运行。
+        console.log("立即执行函数1");
+    }
+
+    foo();// 这是语句，Statement；解释器遇到语句是会运行它的。
+
+    //  IIFE函数的调用方式通常是将函数表达式、它的调用操作符、分组操作符放到一个括号内，来告诉解释器这里有一个需要立即执行的函数。否则通常情况下，解析器遇到一个function关键字，都会把它当做是一个函数声明，而不是函数表达式。
+    // 如下几种写法都是可以的：
+    (function test() {
+        console.log("立即执行函数2");
+    }());
+
+    (function test() {
+        console.log("立即执行函数3");
+    })();
+
+    !function test() {
+        console.log("立即执行函数4");
+    }();
+
+    +function test() {
+        console.log("立即执行函数5");
+    }();
+
+    -function test() {
+        console.log("立即执行函数6");
+    }();
+
+    ~function test() {
+        console.log("立即执行函数7");
+    }();
+
+    // $(function(){/*...*/});是$(document).ready(function(){/*...*/})的简写形式，是在DOM加载完成后执行的回调函数，并且只会执行一次。
+
+    $(function(){
+        console.log("DOM加载完成后执行的回调函数，并且只会执行一次");
+    });
+
+    $(document).ready(function(){
+        console.log("DOM加载完成后执行的回调函数，并且只会执行一次");
+    });
+
+
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.4旧时的 "var"</title>
+</head>
+
+<body>
+    <h1>var let const</h1>
+    <ol>
+       
+    </ol>
+</body>
+
+</html>
+<script>
+    function sayHi() {
+        // var phrase = "Hello";
+        let phrase = "Hello";
+        console.log("inner-" + phrase);
+    }
+
+    sayHi();
+
+    // console.log("outer--" + phrase); //Uncaught ReferenceError: phrase is not defined
+
+    if(true){
+        var test = true;
+        // let test = true;
+    }
+    console.log(test);
+
+    for (var i = 0; i < 3; i++) {
+
+    }
+
+    console.log(i); //3
+
+    for (let j = 0; j < 3; j++) {
+
+    }
+
+    console.log(j); //Uncaught ReferenceError: j is not defined
+</script>
