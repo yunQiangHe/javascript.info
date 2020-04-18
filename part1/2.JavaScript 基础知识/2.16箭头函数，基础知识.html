@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数，基础知识</title>
+</head>
+
+<body>
+    <pre>
+    对于一行代码的函数来说，箭头函数是相当方便的。它具体有两种：
+
+不带花括号：(...args) => expression — 右侧是一个表达式：函数计算表达式并返回其结果。
+带花括号：(...args) => { body } — 花括号允许我们在函数中编写多个语句，但是我们需要显式地 return 来返回一些内容</pre>
+    <script>
+        // let func = (agr1, agr2, ...agrN) => expersion
+        let sum = function (a, b) {
+            return a + b;
+        }
+
+        let sum = (a, b) => { return a + b };
+        let sayHi = () => alert("Hello");
+
+        function ask(question, yes, no) {
+            if (confirm(question)) yes()
+            else no();
+        }
+
+        ask(
+            "Do you agree?",
+            function () { alert("You agreed."); },
+            function () { alert("You canceled the execution."); }
+        );
+
+        ask(
+            "Do you agree?",
+            () => { alert("You agreed."); },
+            () => { alert("You canceled the execution."); }
+        );
+
+
+
+
+    </script>
+</body>
+
+</html>

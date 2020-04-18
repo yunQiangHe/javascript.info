@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.15函数表达式</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function sayHi() {
+        console.log("Hello");
+    }
+
+    let sayHi2 = function () {
+        console.log("world");
+    };
+
+    function ask(question, yes, no) {
+        if (confirm(question)) yes()
+        else no();
+    }
+
+    function showOk() {
+        alert("You agreed");
+    }
+
+    function showCancle() {
+        alert("You canceled the execution.");
+    }
+
+    // 用法：函数 showOk 和 showCancel 被作为参数传入到 ask
+    ask("Do you agree?", showOk, showCancle);
+</script>

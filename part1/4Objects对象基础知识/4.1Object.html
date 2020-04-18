@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.1对象</title>
+</head>
+
+<body>
+    <p>JS有八种数据类型：七种原始数据类型 和 引用数据类型</p>
+    <p>计算属性</p>
+</body>
+
+</html>
+<script>
+    let obj = {
+        name: "hyq",
+        age: 23,
+        "like birds": true
+    };
+    console.log(obj.name);
+    console.log(obj.age);
+    console.log(obj["like birds"]);
+
+    let fruit = prompt("which fruit do you like?", "apple");
+    let bag = {
+        [fruit]: 5, //// 属性名是从 fruit 变量中得到的
+        [fruit + "Computer"]: "计算属性"
+    };
+    console.log(bag.apple);
+
+    // 属性值的简写
+    function makeUser(name, age) {
+        // return {
+        //     name: name,
+        //     age: age
+        // }
+        return {
+            name,// 与 name: name 相同
+            age,
+            0: 123 //当我们使用数字 0 作为属性 key 时，它将被转化为字符串 "0"
+        }
+    }
+
+    let user = makeUser("HYQ", 30);
+
+    // 属性名称的限制
+    // 属性名（Key）必须是字符串或是Symbol
+
+    // 属性存在性测试，“in”操作符
+    
+</script>
