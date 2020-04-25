@@ -14,40 +14,115 @@
 
 </html>
 <script>
-    let obj = {
-        name: "hyq",
-        age: 23,
-        "like birds": true
-    };
-    console.log(obj.name);
-    console.log(obj.age);
-    console.log(obj["like birds"]);
+    // let obj = {
+    //     name: "hyq",
+    //     age: 23,
+    //     "like birds": true
+    // };
+    // console.log(obj.name);
+    // console.log(obj.age);
+    // console.log(obj["like birds"]);
 
-    let fruit = prompt("which fruit do you like?", "apple");
-    let bag = {
-        [fruit]: 5, //// 属性名是从 fruit 变量中得到的
-        [fruit + "Computer"]: "计算属性"
-    };
-    console.log(bag.apple);
+    // let fruit = prompt("which fruit do you like?", "apple");
+    // let bag = {
+    //     [fruit]: 5, //// 属性名是从 fruit 变量中得到的
+    //     [fruit + "Computer"]: "计算属性"
+    // };
+    // console.log(bag.apple);
 
     // 属性值的简写
-    function makeUser(name, age) {
-        // return {
-        //     name: name,
-        //     age: age
-        // }
-        return {
-            name,// 与 name: name 相同
-            age,
-            0: 123 //当我们使用数字 0 作为属性 key 时，它将被转化为字符串 "0"
-        }
-    }
+    // function makeUser(name, age) {
+    //     // return {
+    //     //     name: name,
+    //     //     age: age
+    //     // }
+    //     return {
+    //         name,// 与 name: name 相同
+    //         age,
+    //         0: 123 //当我们使用数字 0 作为属性 key 时，它将被转化为字符串 "0"
+    //     }
+    // }
 
-    let user = makeUser("HYQ", 30);
+    // let user = makeUser("HYQ", 30);
 
     // 属性名称的限制
     // 属性名（Key）必须是字符串或是Symbol
 
     // 属性存在性测试，“in”操作符
-    
+    // console.log("name in user-" + ('name' in user))
+
+    // const user = {
+    //     name: "John",
+    //     age: 30,
+    //     isAdmin: true,
+    //     "like brids": true,
+    // };
+
+    // user.name = "d";
+
+    // for (let i in user) {
+    //     console.log(i);
+    // }
+    // console.log(user.name);
+    // let user = {
+    //     name: "John",
+    //     age: 30
+    // };
+
+    // let clone = {};
+
+    // for (let key in user) {
+    //     clone[key] = user[key];
+    // }
+
+    // clone.name = "XXXX";
+
+    // console.log(user);
+    // console.log(clone);
+
+    // console.log(user == clone)
+    // console.log(user === clone)
+
+
+    // let user = {
+    //     name: "John",
+    //     sizes: {
+    //         height: 182,
+    //         width: 50
+    //     }
+    // };
+
+    // let clone = Object.assign({}, user);
+
+    // clone.sizes.height++;
+
+    // console.log(user.sizes.height);  //183
+
+
+    // function isEmpty(obj) {
+    //     for (let key in obj) {
+    //         if (obj[key]) {
+    //             return false;
+    //         }
+    //         return true;
+    //     }
+    // }
+
+    let salaries = {
+        John: "100",
+        Ann: 160,
+        Pete: 130
+    }
+
+    function getSum(obj) {
+        let sum = 0;
+        for (let k in obj) {
+            sum += +obj[k];
+        }
+        return sum;
+    }
+    let sum = getSum(salaries);
+    console.log(sum);
+
+
 </script>
