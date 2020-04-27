@@ -31,4 +31,25 @@ function pow(x, n) {
     }
 }
 
-console.log(pow(2, 3)); //8
+// console.log(pow(2, 3)); //8
+// 编写一个函数 fib(n) 返回第 n 个斐波那契数。
+// 1.递归
+function fib(n) {
+    return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+}
+
+
+// 另一个选择就是不使用递归，而是使用完全不同的基于循环的算法。
+
+function fibLoop(n) {
+    let a = 1;
+    let b = 1;
+    for (let i = 3; i <= n; i++) {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
+}
+
+console.log(fibLoop(7));
